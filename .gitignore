@@ -4,6 +4,9 @@
 # Log file
 *.log
 
+# environment file with passowords
+.env
+
 # BlueJ files
 *.ctxt
 
