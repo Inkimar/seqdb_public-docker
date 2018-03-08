@@ -6,7 +6,7 @@ DOCKERHUB_VER=v3.15
 
 all: up
 
-up: build
+up:
 	@docker-compose up -d
 
 down:
