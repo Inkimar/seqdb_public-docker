@@ -8,8 +8,12 @@ services:
    environment:
     - VIRTUAL_HOST=public_seqdb.dina-web.net
     - VIRTUAL_PORT=8080
-   external_links:
+   external_links: 
     - db:db
+    #- lenovo:db # 'service:alias'
+   extra_hosts:
+    - "lenovo:192.168.0.17"
+    - "db:192.168.0.17"
    volumes:
     - ./srv/logs:/opt/tomcat/logs
 
