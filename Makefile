@@ -9,13 +9,16 @@ all: up
 up: 
 	@docker-compose up -d
 
+up-dev:
+	@docker-compose -f docker-compose.dev.yml up
+
 down:
 	@docker-compose down
 
 build: 
 	@docker build -t dina/seqdb_ui:${DOCKERHUB_VER} Docker-tomcat
 
-test:
+test-browser:
 	#xdg-open http://public.nrm.se/?filter[species]=arctos
     xdg-open http://public_seqdb.dina-web.net/?filter[species]=arctos
 
