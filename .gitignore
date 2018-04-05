@@ -3,7 +3,10 @@
 
 # Log file
 *.log
-*.txt
+srv/logs/**
+
+# tmp files
+*~
 
 # Package Files #
 #*.jar
