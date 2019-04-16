@@ -1,8 +1,7 @@
 #!make
+include .env
 
 PWD=$(shell pwd)
-DOCKERHUB_VER=v3.17
-
 
 all: up
 
@@ -19,7 +18,7 @@ down:
 	@docker-compose down
 
 build: 
-	@docker build -t dina/seqdb_ui:${DOCKERHUB_VER} Docker-tomcat
+	@docker build -t ${IMAGE}:${TAG} Docker-tomcat
 
 test-browser:
 	#xdg-open http://public.nrm.se/?filter[species]=arctos
