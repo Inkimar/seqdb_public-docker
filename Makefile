@@ -1,8 +1,6 @@
 #!make
 include .env
 
-PWD=$(shell pwd)
-
 all: up
 
 up: 
@@ -17,8 +15,11 @@ up-dev:
 down:
 	@docker-compose down
 
-build: 
-	@docker build -t ${IMAGE}:${TAG} Docker-tomcat
+build-docker: 
+	@docker build -t ${IMAGE} docker-tomcat
+
+release-docker:
+	docker push ${IMAGE}
 
 test-browser:
 	#xdg-open http://public.nrm.se/?filter[species]=arctos
