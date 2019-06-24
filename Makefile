@@ -1,10 +1,13 @@
 #!make
 include .env
 
-all: up
+all: up-local
 
-up: 
+up-prod: 
 	@docker-compose up -d
+
+up-local:
+	@docker-compose -f docker-compose.dev.yml up
 
 stop:
 	@docker-compose stop
@@ -22,7 +25,6 @@ release-docker:
 	docker push ${IMAGE}
 
 test-browser:
-	#xdg-open http://public.nrm.se/?filter[species]=arctos
     xdg-open http://public_seqdb.dina-web.net/?filter[species]=arctos
 
 #backup: # to unzip : 'gzip -d <file>'
