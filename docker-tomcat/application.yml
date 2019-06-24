@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://db/seqdb_prod?currentSchema=seqdb
+    username: brf
+    password: brf
+  liquibase.enabled: false
+  jpa:
+    properties.hibernate:
+      current_session_context_class: thread
+      # Ehcache enabled to improve Hibernate performance.
+      cache:
+        use_second_level_cache: true
+        use_query_cache: true
+        # Fixes "net.sf.ehcache.CacheException: Another unnamed CacheManager already exists" error
+        # when testing 
+        region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+    hibernate:
+      naming:
+        # Naming strategies specified to allow @Column/@Table name property.
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mappings: false
