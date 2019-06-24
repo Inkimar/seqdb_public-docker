@@ -1,23 +1,22 @@
-version: '3.1'
+version: '3.3'
 
 services:
 
   tomcat:
-   image: dina/seqdb_ui:v3.17
+   image: ${IMAGE}
    container_name: seqdb_public
    environment:
-    - VIRTUAL_HOST=public_seqdb.dina-web.net
+    - VIRTUAL_HOST=seqpublic.nrm.se
     - VIRTUAL_PORT=8080
    external_links: 
     - db:db
    extra_hosts:
-    - "lenovo:172.16.23.33"
-    - "db:172.16.23.33"
+    - "db:192.168.1.238" #local-machine
    volumes:
     - ./srv/logs:/opt/tomcat/logs
 
 networks:
   default:
     external:
-       name: proxydocker_default
+       name: proxy-docker_default
 
