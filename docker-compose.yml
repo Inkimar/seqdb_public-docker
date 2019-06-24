@@ -10,9 +10,10 @@ services:
    external_links: 
     - db:db
    extra_hosts:
-    - "db:0.0.0.0"
+    - "db:193.10.57.76" #prod-machine (seqdb-as)
    volumes:
     - ./srv/logs:/opt/tomcat/logs
+
 networks:
   default:
     external:
