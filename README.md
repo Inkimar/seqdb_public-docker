@@ -1,4 +1,6 @@
-#Deployed as ROOT.war
+
+# Notes on when MySQL was used
+Deployed as ROOT.war
 
 1. http://public.seqdb.se/
 2. http://public.seqdb.se/?filter[species]=arctos
@@ -12,9 +14,11 @@ mysql running in a container, exposing  port 13360
 $ mysql --host=localhost --port=13360 --user=brf --password=xxxxx seqdbweb
 
 # troubleshooting , install 'ping' and 'mysql-client'
+
 $ docker exec -it seqdb_public bash
 root@4952dd239781:/opt/tomcat# apt update
 root@4952dd239781:/opt/tomcat# apt-get install iputils-ping -y
+
 Ping the 'db'-machine :
 root@4952dd239781:/opt/tomcat# ping db
 PING db (193.10.57.76) 56(84) bytes of data.
