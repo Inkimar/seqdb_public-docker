@@ -11,7 +11,7 @@ services:
    external_links: 
     - db:db
    extra_hosts:
-    - "db:192.168.1.238" #local-machine
+    - "db:172.16.36.43" #local-machine : '172.16.36.43' or '192.168.1.238'
    volumes:
     - ./srv/logs:/opt/tomcat/logs
 
