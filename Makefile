@@ -6,6 +6,10 @@ all: up
 up: 
 	@docker-compose up -d
 
+# AAFC delivers a tar-file, you create the image using the cmd 'docker load ...'
+load-tar:
+	docker load -i seqdb-public-ui3_35.tar
+
 stop:
 	@docker-compose stop
 
