@@ -1,20 +1,25 @@
 version: '3.3'
 
 services:
-
-  seqpublic:
+  public-ui:
    image: ${IMAGE}
-   container_name: seqdb_public
+   container_name: seqpublic
    environment:
-    - VIRTUAL_HOST=seqpublic.nrm.se
+      #- VIRTUAL_HOST=seqpublic.nrm.se
+      VIRTUAL_HOST: seqpublic.nrm.se
+      spring.datasource.url: jdbc:postgresql://database/seqdb_prod?currentSchema=seqdb
+      spring.datasource.username: seqdb_webapp
+      spring.datasource.password: changeme
+      spring.liquibase.enabled: "false" 
    external_links: 
-    - db:db
+    - database:database
    extra_hosts:
-    - "db:0.0.0.0"
-   volumes:
-    - ./srv/logs:/opt/tomcat/logs
+    - "database:193.10.57.76"
+    # - "db:0.0.0.0"
+    #volumes:
+    #- ./srv/logs:/opt/tomcat/logs
 networks:
   default:
     external:
-       name: proxy-docker_default
+      name: proxydocker_default
 
