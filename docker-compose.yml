@@ -5,7 +5,6 @@ services:
    image: ${IMAGE}
    container_name: seqpublic
    environment:
-      #- VIRTUAL_HOST=seqpublic.nrm.se
       VIRTUAL_HOST: seqpublic.nrm.se
       spring.datasource.url: jdbc:postgresql://database/seqdb_prod?currentSchema=seqdb
       spring.datasource.username: seqdb_webapp
@@ -17,10 +16,7 @@ services:
    extra_hosts:
     - "database:193.10.57.76"
     # - "db:0.0.0.0"
-    #volumes:
-    #- ./srv/logs:/opt/tomcat/logs
 networks:
   default:
     external:
       name: proxydocker_default
-

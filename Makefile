@@ -4,6 +4,7 @@ include .env
 all: up
 
 up: 
+
 	@docker-compose up -d
 
 # AAFC delivers a tar-file, you create the image using the cmd 'docker load ...'

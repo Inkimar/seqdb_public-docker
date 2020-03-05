@@ -5,9 +5,6 @@
 *.log
 srv/logs/**
 
-# tmp files
-*~
-
 # Package Files #
 #*.jar
 *.war
@@ -15,6 +12,3 @@ srv/logs/**
 *.zip
 *.tar.gz
 *.rar
-
-# password-files
-.env
