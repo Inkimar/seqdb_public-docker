@@ -1,7 +1,6 @@
 #Need to start the proxy with the right SSL-cert
 https://github.com/DINA-Web/proxy-docker
 
-#Deployed as ROOT.war
 
 if running locally, remember to edit the /etc/hosts-file ( set public.nrm.se to 127.0.0.1)
 
