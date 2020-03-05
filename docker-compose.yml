@@ -11,6 +11,7 @@ services:
       spring.datasource.username: seqdb_webapp
       spring.datasource.password: changeme
       spring.liquibase.enabled: "false" 
+      spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.PostgreSQL95Dialect
    external_links: 
     - database:database
    extra_hosts:
